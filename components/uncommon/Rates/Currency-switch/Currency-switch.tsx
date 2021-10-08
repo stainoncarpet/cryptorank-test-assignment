@@ -8,7 +8,7 @@ interface IProps {
 const CurrencySwitch = ({handleSwitchCurrency}: IProps) => {
     return (
         <CurrencySwitchStyled>
-            <label htmlFor="currency-select" >Currency:</label>
+            <label htmlFor="currency-select" >Currency: </label>
             <select name="pets" id="currency-select" onChange={handleSwitchCurrency}>
                 <option value="USD">USD</option>
                 <option value="BTC">BTC</option>

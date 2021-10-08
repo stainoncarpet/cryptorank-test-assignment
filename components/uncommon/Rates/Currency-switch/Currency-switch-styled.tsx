@@ -5,7 +5,7 @@ const CurrencySwitchStyled = styled.div`
     text-align: right;
 
     label, select {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
     }
 `;
 

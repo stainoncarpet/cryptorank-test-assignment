@@ -1,10 +1,11 @@
+import Heading from '../components/common/Heading/Heading';
 import Layout from '../components/common/Layout/Layout';
 import calculator from '../helpers/calculator';
 
 const HomePage = (props: any) => {
   return <Layout>
-    <p>{props.msg1}</p>
-    <p>{props.msg2}</p>
+    <Heading>{props.msg1}</Heading>
+    <Heading>{props.msg2}</Heading>
     </Layout>
 };
 

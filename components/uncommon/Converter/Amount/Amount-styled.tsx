@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 const AmountStyled = styled.div`
     display: flex;
-    /* position: relative;
-    isolation: isolate; */
     align-items: center;
     flex: 1 1 100%;
 
@@ -24,23 +22,11 @@ const AmountStyled = styled.div`
     }
 
     .amount-switches {
-        /* top: 0;
-        right: 0;
-        position: absolute; */
         display: flex;
         flex-direction: column;
         margin-right: 1rem;
-        margin-left: 0.5rem;
-    }
-
-    i {
-        display: inline-block;
-        border: 1px solid black;
-        font-size: 1.25rem;
-        cursor: pointer;
-        padding-right: 8px;
-        padding-left: 8px;
-        vertical-align: middle;
+        margin-left: 0.25rem;
+        gap: 2px;
     }
 
     h2 {
@@ -49,6 +35,18 @@ const AmountStyled = styled.div`
         align-self: stretch;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        border: 1px solid #212121;
+    }
+
+    button {
+        width: 24px;
+        height: 24px;
+        background-color: #F6F6F6;
+        border: none;
+        border-radius: 5px;
+        border: 1px solid #212121;
     }
 
 `
