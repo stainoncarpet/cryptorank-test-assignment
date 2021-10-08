@@ -6,6 +6,7 @@ const RatesStyled = styled.div`
         width: 100%;
         margin-top: 1rem;
         border: 1px solid gray;
+        border-radius: 5px;
 
         span {
             display: inline-block;
