@@ -1,19 +1,16 @@
+import fetch from "isomorphic-unfetch";
+
 import Layout from '../components/common/Layout/Layout';
 import Converter from '../components/uncommon/Converter/Converter';
 import { wrapper } from '../redux/store';
-import fetch from "isomorphic-unfetch";
 
 export default function ConverterPage(props: any) {
   return <Layout>
-    <h1>{props.test}</h1>
     <Converter />
   </Layout>
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store): any => async ({req, res}: any) => {
-  //const state = store.getState();
-  //store.dispatch({type: "converter/setAmount", payload: 777});
-
   //const res2 = await fetch("https://api.cryptorank.io/v1/currencies/1?api_key=" + process.env.API_KEY);
   //const {data} = await res2.json();
   //const currenciesListObject = data?.values;

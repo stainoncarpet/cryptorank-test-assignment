@@ -9,9 +9,6 @@ interface IProps {
 }
 
 const CalculationResult = ({amountFrom, amountTo, selectedCurrencyFrom, selectedCurrencyTo}: IProps) => {
-    // formula
-    // amont * currencyFrom
-
     return (
         <Heading>
             {amountFrom} {selectedCurrencyFrom} = {amountTo} {selectedCurrencyTo}

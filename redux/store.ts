@@ -3,9 +3,11 @@ import { createWrapper, MakeStore } from "next-redux-wrapper";
 import thunk from 'redux-thunk';
 
 import converterSlice from './slices/converter/converter';
+import watchlistSlice from './slices/watchlist/watchlist';
 
 const reducers: any = combineReducers({
-  converter: converterSlice.reducer
+  converter: converterSlice.reducer,
+  watchlist: watchlistSlice.reducer
 });
 
 const setupStore = (context: any): EnhancedStore => {

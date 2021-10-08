@@ -1,24 +1,18 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Amount from './Amount/Amount';
 import CalculationResult from './Calculation-result/Calculation-result';
 import ConverterStyled from './Converter-styled';
 import CurrenciesSelection from './Currencies-selection/Currencies-selection';
 import Heading from "../../common/Heading/Heading-styled"
-//import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
-import { AppState, AppStore } from '../../../redux/store';
-import { useDispatch, useSelector } from 'react-redux';
-import converterSlice, { IConverterSlice } from '../../../redux/slices/converter/converter';
+import { AppState } from '../../../redux/store';
+import converterSlice from '../../../redux/slices/converter/converter';
 
 const Converter = () => {
     const {converter}  = useSelector((state: AppState) => state);
     const dispatch = useDispatch();
     const swapCurrencies = () => dispatch(converterSlice.actions.swapSelectedCurrencies({}));
-
-    //const amountFromInBTC = converter?.availableCurrenciesFrom[converter?.selectedCurrencyFrom]?.price * converter?.amount;
-    //const amountInTargetCurrency = amountFromInBTC / converter?.availableCurrenciesTo[converter?.selectedCurrencyTo]?.price
-    //const amountInTargetCurrency = amountFromInBTC * converter?.availableCurrenciesTo[converter?.selectedCurrencyTo]?.price;
-
 
     const correctAmountFromInBTC = converter?.amount / converter?.availableCurrenciesFrom[converter?.selectedCurrencyFrom]?.price;
     const correctAmountToInBTC = correctAmountFromInBTC * converter?.availableCurrenciesFrom[converter?.selectedCurrencyTo]?.price;
