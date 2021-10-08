@@ -13,12 +13,15 @@ import converterSlice, { IConverterSlice } from '../../../redux/slices/converter
 const Converter = () => {
     const {converter}  = useSelector((state: AppState) => state);
     const dispatch = useDispatch();
-
     const swapCurrencies = () => dispatch(converterSlice.actions.swapSelectedCurrencies({}));
 
-    const amountFromInBTC = converter?.availableCurrenciesFrom[converter?.selectedCurrencyFrom]?.price * converter?.amount;
+    //const amountFromInBTC = converter?.availableCurrenciesFrom[converter?.selectedCurrencyFrom]?.price * converter?.amount;
     //const amountInTargetCurrency = amountFromInBTC / converter?.availableCurrenciesTo[converter?.selectedCurrencyTo]?.price
-    const amountInTargetCurrency = amountFromInBTC * converter?.availableCurrenciesTo[converter?.selectedCurrencyTo]?.price
+    //const amountInTargetCurrency = amountFromInBTC * converter?.availableCurrenciesTo[converter?.selectedCurrencyTo]?.price;
+
+
+    const correctAmountFromInBTC = converter?.amount / converter?.availableCurrenciesFrom[converter?.selectedCurrencyFrom]?.price;
+    const correctAmountToInBTC = correctAmountFromInBTC * converter?.availableCurrenciesFrom[converter?.selectedCurrencyTo]?.price;
 
     return (
         <ConverterStyled>
@@ -33,7 +36,7 @@ const Converter = () => {
             />
             <CalculationResult 
                 amountFrom={converter.amount} 
-                amountTo={amountInTargetCurrency}
+                amountTo={correctAmountToInBTC}
                 selectedCurrencyFrom={converter.selectedCurrencyFrom} 
                 selectedCurrencyTo={converter.selectedCurrencyTo}
             />
