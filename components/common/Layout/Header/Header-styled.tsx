@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const HeaderStyled = styled.header`
     min-height: 100px;
-    background-color: #fffff0;
+    background-color: #212121;
     display: flex;
     align-items: center;
     padding: 1rem 2rem;
@@ -23,6 +23,10 @@ const HeaderStyled = styled.header`
     li {
         padding: 0.5rem 1rem;
         font-size: 1.5rem;
+    }
+
+    a {
+        color: white;
     }
 `;
 

@@ -11,12 +11,14 @@ interface IProps {
     availableSupply: number,
     marketCap: number,
     category: string,
-    icon: string
+    icon: string,
+    hasBackground: boolean
 }
 
-const RatesItem = ({key, name, symbol, price, availableSupply, marketCap, category, icon}: IProps) => {
+const RatesItem = (props: IProps) => {
+    const {key, name, symbol, price, availableSupply, marketCap, category, icon, hasBackground} = props;
     return (
-        <RatesItemStyled>
+        <RatesItemStyled {...props} style={{backgroundColor: hasBackground ? "#F6F6F6" : "initial"}}>
             <td className={`name ${name}`}>
                 <div>
                     <a href={`https://cryptorank.io/price/${key}`}>

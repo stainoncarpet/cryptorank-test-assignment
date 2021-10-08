@@ -24,7 +24,6 @@ const Rates = () => {
     return (
         <RatesStyled>
             <Heading>Rates Watchlist</Heading>
-            <CurrencySwitch handleSwitchCurrency={handleSwitchCurrency} />
             <table>
                 <thead>
                     <tr>
@@ -36,7 +35,7 @@ const Rates = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {currencies?.map(({key, name, symbol, price: {USD, BTC, ETH}, availableSupply, marketCap, category, icon}: any) => 
+                    {currencies?.map(({key, name, symbol, price: {USD, BTC, ETH}, availableSupply, marketCap, category, icon}: any, index: number) => 
                         {
                             return <RatesItem 
                                 key={key} 
@@ -52,11 +51,13 @@ const Rates = () => {
                                 marketCap={marketCap} 
                                 category={category}
                                 icon={icon}
+                                hasBackground={index % 2 === 1}
                             />
                         }
                     )}
                 </tbody>
             </table>
+            <CurrencySwitch handleSwitchCurrency={handleSwitchCurrency} />
         </RatesStyled>
     );
 };

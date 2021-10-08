@@ -15,7 +15,7 @@ const CurrencySwitch = ({handleSwitchCurrency}: IProps) => {
                 <option value="ETH">ETH</option>
             </select>
         </CurrencySwitchStyled>
-    )
+    );
 };
 
 export default CurrencySwitch;
