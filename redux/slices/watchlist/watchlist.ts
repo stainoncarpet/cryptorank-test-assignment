@@ -21,4 +21,4 @@ const watchlistSlice = createSlice({
 
 export default watchlistSlice;
 
-export {initialState}; // used to reset state in extraReducers
+export {initialState};

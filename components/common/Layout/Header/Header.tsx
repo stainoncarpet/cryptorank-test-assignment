@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link';
 
 import HeaderStyled from './Header-styled';
@@ -26,7 +25,7 @@ const Header = () => {
                 </ul>
             </nav>
         </HeaderStyled>
-    )
+    );
 };
 
 export default Header;

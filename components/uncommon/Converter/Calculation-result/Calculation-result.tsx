@@ -1,6 +1,3 @@
-import React from 'react';
-import Heading from "../../../common/Heading/Heading";
-
 interface IProps {
     amountFrom: number,
     amountTo: number,
@@ -10,9 +7,9 @@ interface IProps {
 
 const CalculationResult = ({amountFrom, amountTo, selectedCurrencyFrom, selectedCurrencyTo}: IProps) => {
     return (
-        <Heading>
+        <h2>
             {amountFrom} {selectedCurrencyFrom} = {amountTo} {selectedCurrencyTo}
-        </Heading>
+        </h2>
     );
 };
 

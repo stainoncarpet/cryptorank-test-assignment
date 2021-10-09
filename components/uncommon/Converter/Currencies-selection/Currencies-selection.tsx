@@ -18,7 +18,6 @@ const CurrenciesSelection = ({selectedCurrencyFrom, selectedCurrencyTo, swapCurr
     return (
         <CurrenciesSelectionStyled>
             <Dropdown 
-                open={isLeftDropdownOpen} 
                 selectedCurrency={selectedCurrencyFrom}
                 isDropDownOpen={isLeftDropdownOpen}
                 setIsDropdownOpen={() => {
@@ -30,7 +29,6 @@ const CurrenciesSelection = ({selectedCurrencyFrom, selectedCurrencyTo, swapCurr
             />
             <SwapButton swapCurrencies={swapCurrencies} />
             <Dropdown 
-                open={isRightDropdownOpen} 
                 selectedCurrency={selectedCurrencyTo}
                 isDropDownOpen={isRightDropdownOpen}
                 setIsDropdownOpen={() => {

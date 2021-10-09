@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
@@ -18,6 +17,11 @@ export const GlobalStyle = createGlobalStyle`
     a {
         color: #4183c4;
         text-decoration: none;
+    }
+
+    input {
+        border: 1px solid #CCC;
+        border-radius: 5px;
     }
 `
 

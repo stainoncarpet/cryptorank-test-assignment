@@ -26,7 +26,6 @@ const DropdownStyled = styled.div`
     span {
         cursor: pointer;
         position: absolute;
-        //top: 50%;
         right: 0;
         width: 3rem;
         height: 3rem;

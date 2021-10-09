@@ -1,4 +1,4 @@
-import { initialState, IConverterSlice } from "./converter";
+import { IConverterSlice } from "./converter";
 
 const reducers = {
     setAmount: (state: IConverterSlice, action: any) => {
@@ -16,8 +16,6 @@ const reducers = {
         state.selectedCurrencyTo = temp;
     },
     selectCurrency: (state: IConverterSlice, action: any) => {
-        console.log(state, action);
-        
         if(action.payload.position === "left") {
             state.selectedCurrencyFrom = action.payload.currency;
         } else {

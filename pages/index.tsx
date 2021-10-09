@@ -1,6 +1,6 @@
 import Heading from '../components/common/Heading/Heading';
 import Layout from '../components/common/Layout/Layout';
-import calculator from '../helpers/calculator';
+import {calculateFromATH, calculateToATH} from '../helpers/calculator/calculator';
 
 const HomePage = (props: any) => {
   return <Layout>
@@ -10,8 +10,9 @@ const HomePage = (props: any) => {
 };
 
 export async function getServerSideProps(context: any) {
-  const msg1 = await calculator.calculateFromATH();
-  const msg2 = await calculator.calculateToATH();
+  // Deliberately called separately which takes more time
+  const msg1 = await calculateFromATH();
+  const msg2 = await calculateToATH();
 
   return {
     props: {msg1, msg2}

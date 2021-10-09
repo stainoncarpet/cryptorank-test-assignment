@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 
 import Heading from '../../common/Heading/Heading';
 import RatesStyled from './Rates-styled';
-import RatesItem from './Rates-item/Rates-item';
 import CurrencySwitch from './Currency-switch/Currency-switch';
+import RatesTable from '../Rates-table/Rates-table';
 
-enum EPricedInCurrency {
+export enum EPricedInCurrency {
     BTC = "BTC",
     ETH = "ETH",
     USD = "USD"
@@ -24,39 +24,7 @@ const Rates = () => {
     return (
         <RatesStyled>
             <Heading>Rates Watchlist</Heading>
-            <table>
-                <thead>
-                    <tr>
-                        <th><span className="name">Name</span></th>
-                        <th><span>Price</span></th>
-                        <th><span>Circ. Supply</span></th>
-                        <th><span>Market Cap</span></th>
-                        <th><span>Category</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {currencies?.map(({key, name, symbol, price: {USD, BTC, ETH}, availableSupply, marketCap, category, icon}: any, index: number) => 
-                        {
-                            return <RatesItem 
-                                key={key} 
-                                name={name}
-                                symbol={symbol}
-                                price={isDisplayedIn === EPricedInCurrency.USD 
-                                    ? USD
-                                    : isDisplayedIn === EPricedInCurrency.BTC
-                                        ? BTC
-                                        : ETH
-                                } 
-                                availableSupply={availableSupply} 
-                                marketCap={marketCap} 
-                                category={category}
-                                icon={icon}
-                                hasBackground={index % 2 === 1}
-                            />
-                        }
-                    )}
-                </tbody>
-            </table>
+            <RatesTable currencies={currencies} isDisplayedIn={isDisplayedIn} />
             <CurrencySwitch handleSwitchCurrency={handleSwitchCurrency} />
         </RatesStyled>
     );

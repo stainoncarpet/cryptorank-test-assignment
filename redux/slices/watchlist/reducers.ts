@@ -1,4 +1,4 @@
-import { initialState, IWatchlistSlice } from "./watchlist";
+import { IWatchlistSlice } from "./watchlist";
 
 const reducers = {
     setCurrenciesList: (state: IWatchlistSlice, action: any) => {

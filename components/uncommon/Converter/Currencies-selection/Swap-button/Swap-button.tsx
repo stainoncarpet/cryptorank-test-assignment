@@ -1,6 +1,4 @@
 import React from 'react';
-import calculator from '../../../../../helpers/calculator';
-import converterSlice from '../../../../../redux/slices/converter/converter';
 import SwapButtonStyled from './Swap-button-styled';
 
 interface IProps {

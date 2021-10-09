@@ -8,10 +8,8 @@ export interface IConverterSlice {
     amount: number,
     selectedCurrencyFrom: string,
     selectedCurrencyTo: string,
-    // Separate arrays because there could be different currencies on each list
     availableCurrenciesFrom: any,
     availableCurrenciesTo: any,
-    //exchangeRate: number | null
 }
 
 const initialState: IConverterSlice = {
@@ -20,7 +18,6 @@ const initialState: IConverterSlice = {
     selectedCurrencyTo: "",
     availableCurrenciesFrom: [],
     availableCurrenciesTo: [],
-    //exchangeRate: null
 }
 
 const converterSlice = createSlice({
@@ -32,4 +29,4 @@ const converterSlice = createSlice({
 
 export default converterSlice;
 
-export {initialState}; // used to reset state in extraReducers
+export {initialState};
