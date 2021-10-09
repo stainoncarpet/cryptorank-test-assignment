@@ -1,4 +1,5 @@
 import React from 'react';
+import { EPosition } from '../../../../redux/slices/converter/reducers';
 import CurrenciesSelectionStyled from './Currencies-selection-styled';
 import Dropdown from './Dropdown/Dropdown';
 import SwapButton from './Swap-button/Swap-button';
@@ -25,7 +26,7 @@ const CurrenciesSelection = ({selectedCurrencyFrom, selectedCurrencyTo, swapCurr
                     setIsRightDropdownOpen(false);
                 }}
                 currencies={currenciesFrom}
-                position={"left"}
+                position={EPosition.LEFT}
             />
             <SwapButton swapCurrencies={swapCurrencies} />
             <Dropdown 
@@ -36,7 +37,7 @@ const CurrenciesSelection = ({selectedCurrencyFrom, selectedCurrencyTo, swapCurr
                     setIsRightDropdownOpen(!isRightDropdownOpen);
                 }}
                 currencies={currenciesTo}
-                position={"right"}
+                position={EPosition.RIGHT}
             />
         </CurrenciesSelectionStyled>
     );

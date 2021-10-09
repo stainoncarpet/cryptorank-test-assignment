@@ -3,7 +3,7 @@ import Converter from '../components/uncommon/Converter/Converter';
 import { fetchCurrencies } from "../helpers/fetcher/fetcher";
 import { wrapper } from '../redux/store';
 
-export default function ConverterPage(props: any) {
+export default function ConverterPage() {
   return <Layout>
     <Converter />
   </Layout>

@@ -1,9 +1,13 @@
 import ContainerStyled from './Container-styled';
 
-const Container = (props: any) => {
+interface IProps {
+    children: JSX.Element
+}
+
+const Container = ({children}: IProps) => {
     return (
         <ContainerStyled>
-            {props.children}
+            {children}
         </ContainerStyled>
     );
 };

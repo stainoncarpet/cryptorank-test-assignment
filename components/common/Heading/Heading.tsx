@@ -1,7 +1,11 @@
 import HeadingStyled from "./Heading-styled";
 
-const Heading = (props: any) => <HeadingStyled>
-    {props.children}
+interface IProps {
+    children: string
+}
+
+const Heading = ({children}: IProps) => <HeadingStyled>
+    {children}
 </HeadingStyled>
 ;
 

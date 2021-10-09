@@ -1,12 +1,15 @@
+import React from 'react';
 import Heading from '../components/common/Heading/Heading';
 import Layout from '../components/common/Layout/Layout';
 import {calculateFromATH, calculateToATH} from '../helpers/calculator/calculator';
 
 const HomePage = (props: any) => {
   return <Layout>
-    <Heading>{props.msg1}</Heading>
-    <Heading>{props.msg2}</Heading>
-    </Layout>
+            <React.Fragment>
+              <Heading>{props.msg1}</Heading>
+              <Heading>{props.msg2}</Heading>
+            </React.Fragment>
+        </Layout>
 };
 
 export async function getServerSideProps(context: any) {

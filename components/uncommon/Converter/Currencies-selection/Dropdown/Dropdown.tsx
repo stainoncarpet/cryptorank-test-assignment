@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import converterSlice from '../../../../../redux/slices/converter/converter';
+import { EPosition } from '../../../../../redux/slices/converter/reducers';
 
 import DropdownStyled from './Dropdown-styled';
 
@@ -9,22 +10,21 @@ interface IProps {
     isDropDownOpen: boolean,
     setIsDropdownOpen: any,
     currencies: Array<any>,
-    position: string
+    position: EPosition
 }
 
-const Dropdown = (props: IProps) => {
-    const {selectedCurrency, isDropDownOpen, setIsDropdownOpen, currencies, position} = props;
+const Dropdown = ({selectedCurrency, isDropDownOpen, setIsDropdownOpen, currencies, position}: IProps) => {
     const setCurrency = converterSlice.actions.selectCurrency;
     const dispatch = useDispatch();
 
     const handleChange = () => {};
 
-    const handleSetCurrency = (currency: string, position: string) => {
+    const handleSetCurrency = (currency: string, position: EPosition) => {
         dispatch(setCurrency({currency, position}))
     };
 
     return (
-        <DropdownStyled {...props}>
+        <DropdownStyled>
             <input type="text" value={selectedCurrency} onChange={handleChange} />
             <span onClick={setIsDropdownOpen}></span>
             {isDropDownOpen && <ul>

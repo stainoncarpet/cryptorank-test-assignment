@@ -1,13 +1,16 @@
-import React from 'react';
 import Container from '../../Container/Container';
 
 import MainStyled from "./Main-styled";
 
-const Main = (props: any) => {
+interface IProps {
+    children: JSX.Element
+}
+
+const Main = ({children}: IProps) => {
     return (
         <MainStyled>
             <Container>
-                {props.children}
+                {children}
             </Container>
         </MainStyled>
     );

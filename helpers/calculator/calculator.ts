@@ -1,4 +1,4 @@
-const calculateFromATH = async () => {
+const calculateFromATH = async (): Promise<string | null> => {
     try {
         const res = await fetch("https://tstapi.cryptorank.io/v0/coins/bitcoin");
         const {data} = await res.json();
@@ -19,7 +19,7 @@ const calculateFromATH = async () => {
     }
 };
 
-const calculateToATH = async () => {
+const calculateToATH = async (): Promise<string | null> => {
     try {
         const res = await fetch("https://tstapi.cryptorank.io/v0/coins/bitcoin");
         const {data} = await res.json();

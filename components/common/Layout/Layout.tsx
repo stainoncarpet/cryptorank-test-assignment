@@ -9,7 +9,11 @@ import Header from './Header/Header';
 import LayoutStyled, { GlobalStyle } from './Layout-styled';
 import Container from "../Container/Container";
 
-const Layout = (props: any) => {
+interface IProps {
+    children: JSX.Element
+}
+
+const Layout = ({children}: IProps) => {
     return (<ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
             <React.Fragment>
                 <GlobalStyle />
@@ -22,7 +26,7 @@ const Layout = (props: any) => {
                     <Header />
                     <Main>
                         <Container>
-                            {props.children}
+                            {children}
                         </Container>
                     </Main>
                     <Footer />

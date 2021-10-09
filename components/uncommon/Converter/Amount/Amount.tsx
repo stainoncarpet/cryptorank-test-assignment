@@ -5,12 +5,17 @@ import converterSlice from '../../../../redux/slices/converter/converter';
 import { AppState } from '../../../../redux/store';
 import AmountStyled from './Amount-styled';
 
-const Amount = ({amount, dispatch}: any) => {
+interface IProps {
+    amount: string,
+    dispatch: (e: any) => any
+}
+
+const Amount = ({amount, dispatch}: IProps) => {
     const converter = useSelector((state: AppState) => state.converter);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if(e.target.value !== '-' && e.target.value !== "+" && e.target.value.match(/^[+-]?[0-9]*([\.][0-9]*)?$/) || e.target.value.length === 0) {
-            dispatch(converterSlice.actions.setAmount(e.target.value));
+            dispatch(converterSlice.actions.setAmount(parseFloat(e.target.value)));
         }
     };
 
